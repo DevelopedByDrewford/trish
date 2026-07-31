@@ -1,0 +1,81 @@
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px 64px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.avatarButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  line-height: 0;
+  transition: transform 0.2s ease;
+}
+
+.avatarButton:hover {
+  transform: scale(1.03);
+}
+
+.avatarButton:active {
+  transform: scale(0.98);
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.name {
+  margin: 4px 0 0;
+  font-family: 'Julius Sans One', sans-serif;
+  letter-spacing: 0.0875em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.businessName {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #a0a0a0;
+  text-align: center;
+}
+
+.photoWidgetWrap {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.loadingState {
+  color: #888;
+  font-size: 0.85rem;
+  padding-top: 64px;
+}

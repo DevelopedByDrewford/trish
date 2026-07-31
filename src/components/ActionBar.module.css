@@ -1,0 +1,217 @@
+.actionBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.button {
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  background: #141414;
+  transform: translateY(0);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  animation: overlayIn 0.22s ease forwards;
+}
+
+.overlayOut {
+  animation: overlayOut 0.18s ease forwards;
+}
+
+.modal {
+  position: relative;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 32px 28px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  animation: modalIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modalOut {
+  animation: modalOut 0.18s ease forwards;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1c1c1c;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.closeButton:hover {
+  background: #2a2a2a;
+}
+
+.closeButton:active {
+  background: #141414;
+}
+
+.modalTitle {
+  margin: 0 0 4px;
+  font-family: 'Julius Sans One', sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modalSubtitle {
+  margin: 0 0 20px;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+.label:first-child {
+  margin-top: 0;
+}
+
+.input,
+.textarea {
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  background: #ffffff;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 22px;
+  padding: 11px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  color: #ffffff;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.errorMessage {
+  color: #e05555;
+  font-size: 0.8rem;
+  margin: 6px 0 0;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+}

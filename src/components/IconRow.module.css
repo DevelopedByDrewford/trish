@@ -1,0 +1,30 @@
+.row {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.pill {
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  color: #a0a0a0;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.pill:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.more {
+  color: #555;
+  font-style: italic;
+}
