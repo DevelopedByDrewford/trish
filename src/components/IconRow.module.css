@@ -1,41 +1,42 @@
 .list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, max-content) minmax(0, max-content);
+  justify-content: center;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--rows), auto);
+  column-gap: 36px;
+  row-gap: 10px;
   margin: 8px 0 0;
   padding: 0;
   width: 100%;
 }
 
-.bar {
+.item {
   display: flex;
-  align-items: center;
-  width: 100%;
-  background: #1c1c1c;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 13px 18px;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
   font-size: 0.85rem;
-  font-weight: 500;
   color: #ffffff;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  line-height: 1.4;
 }
 
-.bar:hover {
-  background: #2a2a2a;
-  transform: translateY(-1px);
-}
-
-.bar:active {
-  background: #141414;
-  transform: translateY(0);
+.item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #a0a0a0;
+  transform: translateY(-2px);
 }
 
 .more {
-  text-align: center;
-  padding: 4px 0 0;
-  font-size: 0.78rem;
   color: #555;
   font-style: italic;
+}
+
+.more::before {
+  background: #444;
 }

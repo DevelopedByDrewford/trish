@@ -1,13 +1,10 @@
-// Local fallback content. Rendered immediately on load and while Firestore
-// is still fetching (or if Firebase env vars haven't been configured yet),
-// so the page never renders empty. Edit the live copy in Firestore at
-// config/site instead of here once that's set up — see README.md.
-const defaultConfig = {
+// Site content. Edit these values directly to update the page.
+const siteConfig = {
   name: 'Trish Maglanoc',
   businessName: 'Veritas Bookkeeping Services',
   tagline:
     'Helping small businesses stay organized, accurate, and audit-ready.',
-  // Placeholder bio — Trish should replace this with her own words via Firestore.
+  // Placeholder bio — Trish should replace this with her own words.
   bio: "Trish is an experienced bookkeeper dedicated to helping small businesses stay organized, accurate, and audit-ready. With a detail-oriented approach to accounts payable, accounts receivable, payroll, and reconciliations, she gives owners the clarity and confidence to focus on running their business. Every engagement starts with understanding your workflow, so the books reflect how you actually operate.",
   services: [
     'Accounts Payable (A/P)',
@@ -18,8 +15,7 @@ const defaultConfig = {
   ],
   contactEmail: 'trish.mag@hotmail.com',
   // Placeholder headshot — replace with Trish's headshot URL once she has one.
-  avatarUrl:
-    'https://api.dicebear.com/9.x/initials/svg?seed=Trish%20Maglanoc&backgroundType=solid&backgroundColor=1c1c1c&textColor=ffffff',
+  avatarUrl: '/veritas-icon.svg',
   // Placeholder stock photos — replace with Trish's own office/work photos.
   photos: [
     {
@@ -49,4 +45,4 @@ const defaultConfig = {
   ],
 }
 
-export default defaultConfig
+export default siteConfig

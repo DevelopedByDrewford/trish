@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSiteConfig } from './hooks/useSiteConfig'
+import config from './data/siteConfig'
 import IconRow from './components/IconRow'
 import ExpandableBio from './components/ExpandableBio'
 import ActionBar from './components/ActionBar'
@@ -8,8 +8,12 @@ import AvatarModal from './components/AvatarModal'
 import InlineLink from './components/InlineLink'
 import styles from './styles/App.module.css'
 
+// Full-size avatar modal is wired up below but temporarily inert — flip
+// this back to true once the avatar is worth clicking into (e.g. once it's
+// a real headshot rather than the logo icon).
+const AVATAR_MODAL_ENABLED = false
+
 export default function App() {
-  const { config } = useSiteConfig()
   const [avatarOpen, setAvatarOpen] = useState(false)
 
   return (
@@ -17,9 +21,17 @@ export default function App() {
       <div className={styles.card}>
         <button
           type="button"
-          className={styles.avatarButton}
-          onClick={() => setAvatarOpen(true)}
-          aria-label={`View full-size photo of ${config.name}`}
+          className={`${styles.avatarButton} ${
+            AVATAR_MODAL_ENABLED ? '' : styles.avatarButtonInactive
+          }`}
+          onClick={AVATAR_MODAL_ENABLED ? () => setAvatarOpen(true) : undefined}
+          aria-label={
+            AVATAR_MODAL_ENABLED
+              ? `View full-size photo of ${config.name}`
+              : undefined
+          }
+          aria-hidden={!AVATAR_MODAL_ENABLED}
+          tabIndex={AVATAR_MODAL_ENABLED ? 0 : -1}
         >
           <img
             src={config.avatarUrl}

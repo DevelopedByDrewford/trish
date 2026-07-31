@@ -33,11 +33,23 @@
   transform: scale(0.98);
 }
 
+.avatarButtonInactive {
+  cursor: default;
+}
+
+.avatarButtonInactive:hover,
+.avatarButtonInactive:active {
+  transform: none;
+}
+
 .avatar {
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #d2d2d2;
+  padding: 6px;
+  box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -52,11 +64,14 @@
 }
 
 .businessName {
-  margin: 0;
+  margin: -8px 0 0;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
-  font-weight: 400;
-  color: #a0a0a0;
+  font-weight: 600;
+  color: #ee9234;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .photoWidgetWrap {
