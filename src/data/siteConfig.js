@@ -13,7 +13,7 @@ const siteConfig = {
     'Clean-up',
     'Reconciliations',
   ],
-  contactEmail: 'trish.mag@hotmail.com',
+  contactEmail: 'trish@veritas-bookkeeping.com',
   // Placeholder headshot — replace with Trish's headshot URL once she has one.
   avatarUrl: '/veritas-icon.svg',
   // Placeholder stock photos — replace with Trish's own office/work photos.
